@@ -15,6 +15,8 @@ from selene.support.shared.jquery_style import s
 @allure.story('Чистый Selene (без шагов)')
 @allure.link('https://github.com', name='Тестирование')
 def test_github_issue():
+    browser.config.window_height = 1920
+    browser.config.window_width = 1620
     browser.open('https://github.com/')
     browser.element('.header-search-input').click()
     browser.element('.header-search-input').type('eroshenkoam/allure-example')
@@ -35,6 +37,8 @@ def test_github_issue():
 @allure.link('https://github.com', name='Тестирование')
 def test_github_issue():
     with allure.step('Открыть главную страницу'):
+        browser.config.window_height = 1920
+        browser.config.window_width = 1620
         browser.open('https://github.com/')
     with allure.step('Найти репозиторий'):
         browser.element('.header-search-input').click()
@@ -59,6 +63,8 @@ def test_github_issue():
 @allure.link("https://github.com", name="Testing")
 def test_dynamic_steps():
     with allure.step("Открываем главную страницу"):
+        browser.config.window_height = 1920
+        browser.config.window_width = 1620
         browser.open("https://github.com")
     with allure.step("Ищем репозиторий"):
         s(".header-search-input").click()
@@ -83,6 +89,8 @@ def test_dynamic_steps():
 @allure.story("Пример теста с декоратором")
 @allure.link("https://github.com", name="Testing")
 def test_decorator_steps():
+    browser.config.window_height = 1920
+    browser.config.window_width = 1620
     open_main_page()
     search_for_repository("eroshenkoam/allure-example")
     go_to_repository("eroshenkoam/allure-example")
